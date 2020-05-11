@@ -94,7 +94,7 @@ class _MyAppState extends State<MyApp> {
   Future<String> getjsondata() async {
     try {
       var response = await http.get(
-          'https://api.unsplash.com/collections/175083/photos?client_id=2y0SIID4GZHZ11KCpmSSdPi_giQg_MsZTIs_UHLITOI&page=$page');
+          'https://api.unsplash.com/collections/1580860/photos?client_id=2y0SIID4GZHZ11KCpmSSdPi_giQg_MsZTIs_UHLITOI&page=$page');
       setState(() {
         image = json.decode(response.body);
         loading=false;
@@ -116,7 +116,7 @@ Future<String> getjsondata2() async {
 
     try {
       var response = await http.get(
-          'https://api.unsplash.com/collections/159602/photos?client_id=it1PXzVQRnxgz8v8hazcst7G9rNfXk1qiS8FgHTTMMk&page=$page2');
+          'https://api.unsplash.com/collections/139386/photos?client_id=it1PXzVQRnxgz8v8hazcst7G9rNfXk1qiS8FgHTTMMk&page=$page2');
         image2 = json.decode(response.body);
         loading2 = false;
 
@@ -137,16 +137,17 @@ Future<String> getjsondata2() async {
               child: Scaffold(
 
             appBar: AppBar(
+
               title: Text("Splash Api"),
               centerTitle: true,
               backgroundColor: Colors.brown,
               bottom: TabBar(
                 tabs: [
                   Tab(
-                    child: Text("Patterns and Textures"),
+                    child: Text("One item - white background"),
                   ),
                   Tab(
-                    child: Text("The Writer's Collection"),
+                    child: Text("Cats"),
                   ),
                 ],
               ),
@@ -183,7 +184,7 @@ Future<String> getjsondata2() async {
                                 Container(
                                   width: MediaQuery.of(context).size.width/2-8,
                                   child: AutoSizeText(
-                                    data[2*index]['user']['name'].toString(),
+                                    "By" +" " + data[2*index]['user']['name'].toString(),
                                     style: TextStyle(fontWeight: FontWeight.bold),
                                     maxFontSize: 12,
 
@@ -209,7 +210,7 @@ Future<String> getjsondata2() async {
                                 Container(
                                   width: MediaQuery.of(context).size.width/2-8,
                                   child: AutoSizeText(
-                                    data[2*index+1]['user']['name'].toString(),
+                                    "By" + " " + data[2*index+1]['user']['name'].toString(),
                                     style: TextStyle(fontWeight: FontWeight.bold),
                                     maxFontSize: 12,
 
@@ -275,7 +276,7 @@ Future<String> getjsondata2() async {
                                   Container(
                                     width: MediaQuery.of(context).size.width/2-8,
                                     child: AutoSizeText(
-                                      data2[2*index]['user']['name'].toString(),
+                                      "By" +" " + data2[2*index]['user']['name'].toString(),
                                       style: TextStyle(fontWeight: FontWeight.bold),
                                       maxFontSize: 12,
 
@@ -301,7 +302,7 @@ Future<String> getjsondata2() async {
                                   Container(
                                     width: MediaQuery.of(context).size.width/2-8,
                                     child: AutoSizeText(
-                                      data2[2*index+1]['user']['name'].toString(),
+                                      "By" +" " + data2[2*index+1]['user']['name'].toString(),
                                       style: TextStyle(fontWeight: FontWeight.bold),
                                       maxFontSize: 12,
 
