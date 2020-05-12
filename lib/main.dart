@@ -337,7 +337,7 @@ Future<String> getjsondata2() async {
                       alignment: Alignment.bottomCenter,
                       )
                   ],
-                ):Container(child: CircularProgressIndicator(),),
+                ):Container(child: Center(child: CircularProgressIndicator()),),
 
               ],           )
               ),
